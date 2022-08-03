@@ -1,3 +1,137 @@
 body {
   background-color: #ccecd1;
 }
+
+// ===========ITEM CARD===============
+.navbar {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 8px 5px -5px gray;
+  background-color: #fff;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  margin-left: 25%;
+  align-items: flex-start;
+}
+.input-field {
+  padding: 10px;
+  width: 220px;
+  padding: 15px;
+  margin-left: 100px;
+  border: 0;
+  border-radius: 4px;
+  background-color: lightgray;
+}
+.search-btn {
+  width: 100px;
+  font-weight: 800;
+  padding: 15px;
+  margin: 20px;
+  border: 0;
+  border-radius: 4px;
+  background-color: lightgray;
+}
+.total-amount {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  margin-left: 100px;
+}
+
+// ===========ITEM CARD===============
+.item-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0px 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 45px;
+}
+.product-name {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.product-img {
+  align-self: center;
+  width: 100px;
+  height: 100px;
+}
+.price {
+  align-self: flex-start;
+  margin-left: 100px;
+}
+.total {
+  margin-left: 100px;
+  margin-bottom: 0;
+  margin-top: 5px;
+  align-self: center;
+}
+.increment-bar {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  padding-top: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.icon:hover {
+  width: 35px;
+  height: 35px;
+}
+.count {
+  font-weight: 300;
+  font-size: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flex-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 5px -5px gray;
+    background-color: #fff;
+  }
+  .logo {
+    align-self: center;
+    margin: 0;
+  }
+  .input-field {
+    padding: 10px;
+    width: fit-content;
+    padding: 15px;
+    margin-left: 100px;
+  }
+  .search-btn {
+    width: 100px;
+    padding: 15px;
+    margin-bottom: 0;
+    float: right;
+  }
+  .total-amount {
+    font-size: 16px;
+    padding: 10px;
+    margin-left: 100px;
+  }
+  .price {
+    margin-left: 20px;
+  }
+  .flex-products {
+    display: flex;
+    flex-direction: column;
+  }
+}
