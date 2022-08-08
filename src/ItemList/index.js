@@ -1,21 +1,27 @@
 import React from 'react';
 import Item from '../Item';
-import './list.css'
+import './list.css';
 
-function ItemList({ products }) {
+function ItemList({
+  products, addNewProduct, cart, updateAmount,
+}) {
+  const totalSelected = 0;
   return (
-    <div className='flex-products'>
+    <div className="flex-products">
       {products.length
         ? products.map((item) => (
           <Item
             key={`product-${item.id}`}
             product={item}
+            addNewProduct={addNewProduct}
+            updateAmount={updateAmount}
+            selected={cart[item.id]}
+            totalSelected={cart[item.id] || totalSelected}
           />
         ))
-        : 'No Products in the DB.'
-      }
+        : 'No Products in the DB.'}
     </div>
-  )
+  );
 }
 
-export default ItemList
+export default ItemList;
