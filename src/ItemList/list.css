@@ -1,0 +1,11 @@
+.flex-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+  
+@media only screen and (max-width: 768px) {
+  .flex-products {
+     display: flex;
+     flex-direction: column;
+  }
+}
