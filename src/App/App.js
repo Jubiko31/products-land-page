@@ -59,24 +59,22 @@ class App extends React.Component {
 
   // ADDING SUM IN BASKET
   calcTotalAmount = () => {
-    let total = 0;
-    for (const id in this.localCart) {
-      // eslint-disable-next-line no-loop-func
-      this.state.products.forEach((element) => {
-        if (element.id == id) {
-          total += this.localCart[id] * element.price;
+    const total = this.state.products.reduce((previous, current) => {
+        if(this.localCart[current.id]) {
+          return previous + current.price * this.localCart[current.id]
         }
-      });
-    }
+        return previous;
+    }, 0);
     return total;
   };
 
   render() {
-    this.state.totalAmount = this.calcTotalAmount();
+    const totalAmount = this.calcTotalAmount();
+
     const { products, isSelected } = this.state;
     return (
       <>
-        <Header search={this.search} totalAmount={this.state.totalAmount} />
+        <Header search={this.search} totalAmount={totalAmount} />
         <ItemList
           products={isSelected || products}
           updateAmount={this.updateAmount}
