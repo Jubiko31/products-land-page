@@ -8,6 +8,7 @@ import './list.css';
 function ItemList({
   products, addNewProduct, cart, updateAmount,
 }) {
+  const totalSelected = 0;
   return (
     <div className="flex-products">
       {products.length
@@ -17,8 +18,8 @@ function ItemList({
             product={item}
             addNewProduct={addNewProduct}
             updateAmount={updateAmount}
-            selected={cart.hasOwnProperty(item.id)}
-            totalSelected={cart[item.id] || 0}
+            selected={cart[item.id]}
+            totalSelected={cart[item.id] || totalSelected}
           />
         ))
         : 'No Products in the DB.'}
